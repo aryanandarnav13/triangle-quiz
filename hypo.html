@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a  href="index.html">Home</a></li>
+      
+        <li><a href="valid.html">Check if triangle is valid or not?</a></li>
+        <li><a href="tri.html">Obtuse triangle/Acute triangle/Right triangle?</a></li>
+        <li><a href="third.html">Find third angle</a></li>
+        <li><a class="active" href="hypo.html">Find Hypotenuse</a></li>
+        <li><a href="area.html">Find Area of triangle</a></li>
+      </ul>
+
+          
+       
+      <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Find Hypotenuse</h2>
+        <div class="container">
+     
+        
+               <br>
+              <form class="validform">
+                  <div class="form-section">
+                      <label for="validfa">Input Base length</label>
+                      <input required type="number" id="validfa" required >
+                  </div>
+                  <div class="form-section">
+                      <label for="validsa">Input Altitude length</label>
+                      <input required type="number" id="validsa" >
+                  </div>
+                
+                  <button type="submit" class="btn">Find Hypotenuse</button>
+              </form>
+
+              <!-- yhi aiga result -->
+              <section>
+                <h1 class="validresult"></h1>
+            </section>
+      </div>
+
+  </div>
+<script>
+    const validform = document.querySelector(".validform");
+const validresult = document.querySelector(".validresult");
+const validfa = document.getElementById('validfa');
+const validsa = document.getElementById('validsa');
+
+
+
+validform.addEventListener("submit", (e) => {
+e.preventDefault();
+let h = Math.hypot(Number(validfa.value), Number(validsa.value))
+
+validresult.innerText = `Hypotenous is ${h}`;
+
+});
+</script>
+</body>
+</html>

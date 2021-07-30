@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <ul>
+        <li><a  href="index.html">Home</a></li>
+      
+        <li><a href="valid.html">Check if triangle is valid or not?</a></li>
+        <li><a class="active" href="tri.html">Obtuse triangle/Acute triangle/Right triangle?</a></li>
+        <li><a href="third.html">Find third angle</a></li>
+        <li><a href="hypo.html">Find Hypotenuse</a></li>
+        <li><a href="area.html">Find Area of triangle</a></li>
+      </ul>
+  
+      <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+        <h2 style="text-align: center; margin-bottom: 2rem;">Obtuse triangle/Acute triangle/Right triangle?</h2>
+        <div class="container">
+     
+        
+               <br>
+              <form class="triform">
+                  <div class="form-section">
+                      <label for="trifa">Input first angle</label>
+                      <input required type="number" id="trifa" required >
+                  </div>
+                  <div class="form-section">
+                      <label for="trisa">Input second angle</label>
+                      <input required type="number" id="trisa" >
+                  </div>
+                  <div class="form-section">
+                    <label for="trita">Input third angle</label>
+                    <input required type="number" id="trita" >
+                </div>
+                  <button type="submit" class="btn">Check if triangle is Acute, Right, Obtuse</button>
+              </form>
+
+              <!-- yhi aiga result -->
+              <section>
+                <h1 class="triresult"></h1>
+            </section>
+      </div>
+
+  </div>
+ <script>
+     const triform = document.querySelector(".triform");
+const triresult = document.querySelector(".triresult");
+const trifa = document.getElementById('trifa');
+const trisa = document.getElementById('trisa');
+const trita = document.getElementById('trita');
+
+triform.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let as= Number(trifa.value) + Number(trisa.value) + Number(trita.value);
+  const TriTriangle = as === 180 ? true : false;
+  if (TriTriangle) {
+if(Number(trifa.value)<90 && Number(trisa.value)<90 && Number(trita.value)<90)
+triresult.innerText = "Acute Triangle";
+if(Number(trifa.value)>90 || Number(trisa.value)>90 || Number(trita.value)>90)
+triresult.innerText = "Obtuse Triangle";
+if(Number(trifa.value)===90 || Number(trisa.value)===90 || Number(trita.value)===90)
+triresult.innerText = "Right Angled Triangle";
+
+} else {
+  triresult.innerText = "Not a valid Triangle";
+}
+
+});
+ </script>
+</body>
+</html>
